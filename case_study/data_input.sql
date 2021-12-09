@@ -31,5 +31,84 @@ value
 (10,'Nguyễn Công Đạo','1994-01-08','755434343',8000000,'0988767111','nguyencongdao12@gmail.com','6 Hoà Khánh, Đồng Nai',2,3,2);
 
 
+insert into furama_database.loai_khach
+value
+(1,'Diamond'),
+(2,'Platinium'),
+(3,'Gold'),
+(4,'Silver'),
+(5,'Member');
+
+
+insert into furama_database.khach_hang
+value
+(1,'Nguyễn Thị Hào','1970-11-07',0,'643431213','0945423362','thihao07@gmail.com','23 Nguyễn Hoàng, Đà Nẵng',5),
+(2,'Phạm Xuân Diệu','1992-08-08',1,'865342123','0954333333','xuandieu92@gmail.com','K77/22 Thái Phiên, Quảng Trị',3),
+(3,'Trương Đình Nghệ','1990-02-27',1,'488645199','0373213122','nghenhan2702@gmail.com','K323/12 Ông Ích Khiêm, Vinh',1),
+(4,'Dương Văn Quan','1981-07-08',1,'543432111','0490039241','duongquan@gmail.com','K453/12 Lê Lợi, Đà Nẵng',1),
+(5,'Hoàng Trần Nhi Nhi','1995-12-09',0,'795453345','0312345678','nhinhi123@gmail.com','224 Lý Thái Tổ, Gia Lai',4),
+(6,'Tôn Nữ Mộc Châu','2005-12-06',0,'732434215','0988888844','tonnuchau@gmail.com','37 Yên Thế, Đà Nẵng',4),
+(7,'Nguyễn Mỹ Kim','1984-04-08',0,'856453123','0912345698','kimcuong84@gmail.com','K123/45 Lê Lợi, Hồ Chí Minh',1),
+(8,'Nguyễn Thị Hào','1999-04-08',0,'965656433','0763212345','haohao99@gmail.com','55 Nguyễn Văn Linh, Kon Tum',3),
+(9,'Trần Đại Danh','1994-07-01',1,'432341235','0643343433','danhhai99@gmail.com','24 Lý Thường Kiệt, Quảng Ngãi',1),
+(10,'Nguyễn Tâm Đắc','1989-07-01',1,'344343432','0987654321','dactam@gmail.com','22 Ngô Quyền, Đà Nẵng',2);
+
+
+insert into furama_database.kieu_thue
+value
+(1,'year'),
+(2,'month'),
+(3,'day'),
+(4,'hour');
+
+insert into furama_database.loai_dich_vu
+value
+(1,'Villa'),
+(2,'House'),
+(3,'Room');
+
+insert into furama_database.dich_vu
+value
+(1,'Villa Beach Front',25000,10000000,10,'vip','Có hồ bơi',500,4,3,1),
+(2,'House Princess 01',14000,5000000,7,'vip','Có thêm bếp nướng',null,3,2,2),
+(3,'Room Twin 01',5000,1000000,2,'normal','Có tivi',null,null,4,3),
+(4,'Villa No Beach Front',22000,9000000,8,'normal','Có hồ bơi',300,3,3,1),
+(5,'House Princess 02',10000,4000000,5,'normal','Có thêm bếp nướng',null,2,3,2),
+(6,'Room Twin 02',3000,900000,2,'normal','Có tivi',null,null,4,3);
+
+insert into furama_database.hop_dong
+value
+(1,'2020-12-08','2020-12-08',0,3,1,3),
+(2,'2020-07-14','2020-07-21',200000,7,3,1),
+(3,'2021-03-15','2021-03-17',50000,3,4,2),
+(4,'2021-01-14','2021-01-18',100000,7,5,5),
+(5,'2021-07-14','2021-07-15',0,7,2,6),
+(6,'2021-06-01','2021-06-03',0,7,7,6),
+(7,'2021-09-02','2021-09-05',100000,7,4,4),
+(8,'2021-06-17','2021-06-18',150000,3,4,1),
+(9,'2020-11-19','2020-11-19',0,3,4,3),
+(10,'2021-04-12','2021-04-14',0,10,3,5),
+(11,'2021-04-25','2021-04-25',0,2,2,1),
+(12,'2021-05-25','2021-05-27',0,7,10,1);
+
+insert	into furama_database.hop_dong_chi_tiet
+value
+(1,5,2,4),
+(2,8,2,5),
+(3,15,2,6),
+(4,1,3,1),
+(5,11,3,2),
+(6,1,1,3),
+(7,2,1,2),
+(8,2,12,2);
+
+
+
+
+
+
+
+
+
 
 
