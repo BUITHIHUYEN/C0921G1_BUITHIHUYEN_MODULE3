@@ -1,5 +1,6 @@
-CREATE DATABASE QuanLySinhVien;
-USE QuanLySinhVien;
+drop database if exists quan_ly_sinh_vien;
+CREATE DATABASE quan_ly_sinh_vien;
+USE quan_ly_sinh_vien;
 CREATE TABLE Class(
 ClassID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 ClassName VARCHAR(60) NOT NULL,
