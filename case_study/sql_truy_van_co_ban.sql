@@ -151,7 +151,14 @@ select hd.ma_hop_dong from hop_dong where (month(hd.ngay_lam_hop_dong) between 1
 and hd.ma_hop_dong not in (select hd.ma_hop_dong from hop_dong where (month(hd.ngay_lam_hop_dong) between 1 and 6) and year(hd.ngay_lam_hop_dong)=2021)
 group by hd.ma_hop_dong;
 
--- task 13: 
+-- task 13:Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
+-- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
+select dvdk.dich_vu_di_kem
+from dich_vu_di_kem dvdk
+join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+group by 
+
+
 
 
 
