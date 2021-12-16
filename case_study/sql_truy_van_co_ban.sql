@@ -202,8 +202,44 @@ order by nv.ma_nhan_vien;
 select *
 from nhan_vien;
 delete from nhan_vien nv
-where nv.ma_nhan_vien not in ( select distinct hop_dong.ma_nhan_vien from hop_dong hd
+where nv.ma_nhan_vien not in ( select distinct ma_nhan_vien from hop_dong hd
 where year(hd.ngay_lam_hop_dong) between 2019 and 2021);
+
+-- task 17:Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, 
+-- chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
+select khach_hang.ma_loai_khach,
+
+
+
+
+
+-- task 18:	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+set foreign_key_checks = 0;
+select kh.ma_khach_hang,
+kh.ho_ten
+from khach_hang kh;
+delete from khach_hang kh 
+where kh.ma_khach_hang in (select hop_dong.ma_khach_hang from hop_dong
+where year(hop_dong.ngay_lam_hop_dong)<2021);
+
+-- task 19: Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+update dich_vu_di_kem
+set gia = gia*2
+where dich_vu_di_kem.ma_dich_vu_di_kem = (select* from (select dich_vu_di_kem.ma_dich_vu_di_kem from dich_vu_di_kem
+join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+join hop_dong hd on hdct.ma_hop_dong = hd.ma_hop_dong
+where hdct.so_luong>10 and year(hd.ngay_lam_hop_dong)=2020) tdlTmp);
+
+select dich_vu_di_kem.ma_dich_vu_di_kem,
+ten_dich_vu_di_kem,
+gia
+from dich_vu_di_kem;
+
+
+-- task 20: 
+
+
+
 
 
 
