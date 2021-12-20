@@ -1,0 +1,39 @@
+body {
+    background: url(background.jpg) no-repeat;
+    color: black;
+    background-size: cover;
+}
+
+a{
+    font-weight: bold;
+    color: #0b0d1d;
+    text-decoration: none;
+    text-shadow: 2px 1px 5px white;
+}
+
+.nextpage {
+    position: relative;
+    left: 50%;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    width: 180px;
+    height: 50px;
+}
+
+.next a {
+    text-decoration: none;
+    color: aliceblue;
+    background: blue;
+    height: 100px;
+    width: 100px;
+
+}
+
+.backward {
+    text-decoration: none;
+    color: aliceblue;
+    background: red;
+    height: 100px;
+    width: 100px;
+}
