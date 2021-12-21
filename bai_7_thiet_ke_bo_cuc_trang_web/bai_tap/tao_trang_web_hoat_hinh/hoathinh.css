@@ -35,9 +35,47 @@
     color: white;
 }
 .menu {
-    text-align: center;
-    background: lightgrey;
-    margin-top: 5px;
+    height: 70px;
+    padding:0;
+    margin:0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+}
+.menu ul, .menu li{
+
+    padding:0;
+    margin:0;
+}
+.menu li{
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0px 30px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    line-height: 50px;
+    background-color: black;
+    color: white;
+}
+.menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+
+}
+.menu li a:hover{
+    height: 50px;
+    background-color: red;
 }
 .cartoon {
     background-color: deepskyblue;
