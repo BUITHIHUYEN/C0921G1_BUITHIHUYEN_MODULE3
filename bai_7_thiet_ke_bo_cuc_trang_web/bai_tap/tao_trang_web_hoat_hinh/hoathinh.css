@@ -12,8 +12,9 @@
 .col-12 {width: 100%;}
 
 * {
-    padding: 0px;
-    margin: 0px;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -35,48 +36,34 @@
     color: white;
 }
 .menu {
-    height: 70px;
-    padding:0;
-    margin:0;
-    background-color: #000000;
-    border: 1px solid #CDCDCD;
-}
-.menu ul, .menu li{
-
-    padding:0;
-    margin:0;
-}
-.menu li{
-    position: relative;
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding:0px 30px;
-    width: 100px;
-    height: 50px;
-    cursor: pointer;
+height: 30px;
+    background: black;
+    width: 100%;
 }
 
-.menu li a {
-    width: 100px;
-    height: 30px;
-    display: block;
-    text-decoration: none;
-    text-align: left;
-    line-height: 50px;
-    background-color: black;
-    color: white;
-}
-.menu ul ul li a {
-    width: 200px;
-    text-align: left;
-    padding-left: 10px;
 
-}
-.menu li a:hover{
-    height: 50px;
-    background-color: red;
+.menu li:hover{
+    height: 100%;
+    background-color: crimson;
 }
 .cartoon {
     background-color: deepskyblue;
+}
+ul{
+    margin: 0;
+}
+
+a{
+    color: white;
+}
+p{
+    font-size: 18px;
+}
+#dropdown li {
+    color: white;
+    padding: 0 30px;
+    text-decoration: none;
+
+    list-style: none; /*bỏ dấu chấm ở đầu li*/
+    float:left ;
 }
