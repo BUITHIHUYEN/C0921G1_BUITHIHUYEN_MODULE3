@@ -63,7 +63,7 @@ p{
     color: white;
     padding: 0 30px;
     text-decoration: none;
-
+    cursor: pointer;
     list-style: none; /*bỏ dấu chấm ở đầu li*/
     float:left ;
 }

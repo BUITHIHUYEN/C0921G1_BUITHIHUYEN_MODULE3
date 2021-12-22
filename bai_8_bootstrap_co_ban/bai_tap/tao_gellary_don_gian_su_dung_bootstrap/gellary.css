@@ -1,6 +1,10 @@
 .picture  {
     border: 1px solid #ccc;
 }
+.picture img{
+    width: 100%;
+    height: auto;
+}
 
 .picture :hover {
     border: 1px solid #777;
@@ -29,7 +33,7 @@
 }
 
 @media only screen and (max-width: 500px){
-    .responsive {
+    .row {
         width: 100%;
     }
 }

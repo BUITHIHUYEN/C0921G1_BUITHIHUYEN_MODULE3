@@ -1,0 +1,15 @@
+
+.thanhmenu li:hover{
+    background-color: crimson;
+}
+.picture1{
+              border: 1px solid #ccc;
+
+}
+.picture1 img{
+    width: 100%;
+    height: auto;
+}
+.picture1 :hover {
+    border: 1px solid #777;
+}
