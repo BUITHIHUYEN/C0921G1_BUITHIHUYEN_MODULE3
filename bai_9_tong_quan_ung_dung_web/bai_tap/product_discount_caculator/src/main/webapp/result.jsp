@@ -12,10 +12,10 @@
 </head>
 <body>
 <h2 style="color: crimson">
-    Discount Amount : <%=request.getAttribute("result1")%>
+    Discount Amount : <%=request.getAttribute("disCountAmount")%>
 </h2>
 <h2 style="color: crimson">
-    Discount Price : <%=request.getAttribute("result2")%>
+    Discount Price : <%=request.getAttribute("disCountPrice")%>
 </h2>
 </body>
 </html>
