@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product searchByName(String name) {
+    public List<Product>  searchByName(String name) {
         return this.productRepository.searchByName(name);
     }
 }

@@ -1,6 +1,7 @@
 package repository.impl;
 
 import bean.Product;
+import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 import repository.ProductRepository;
 
 import java.util.ArrayList;
@@ -13,10 +14,10 @@ public class ProductRepossitoryImpl implements ProductRepository {
 
     static {
         products = new TreeMap<>();
-        products.put(1, new Product(1, "Iphon X", 12000000, "100% NEW", "U.S"));
-        products.put(2, new Product(2, "Iphon 11", 21000000, "100% NEW", "U.S"));
-        products.put(3, new Product(3, "Iphon 12", 28000000, "100% NEW", "U.S"));
-        products.put(4, new Product(4, "Iphon 12 Pro", 36000000, "100% NEW", "U.S"));
+        products.put(1, new Product(1, "Iphone X", 12000000, "100% NEW", "U.S"));
+        products.put(2, new Product(2, "Iphone 11", 21000000, "100% NEW", "U.S"));
+        products.put(3, new Product(3, "Iphone 12", 28000000, "100% NEW", "U.S"));
+        products.put(4, new Product(4, "Iphone 12 Pro", 36000000, "100% NEW", "U.S"));
         products.put(5, new Product(5, "Iphone 13", 40000000, "100% NEW", "U.S"));
     }
 
@@ -49,8 +50,19 @@ public class ProductRepossitoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product searchByName(String name) {
-        return products.get(name);
+    public List<Product> searchByName(String name) {
+        List<Product> products = this.findAll();
+        List<Product> productResult = new ArrayList<>();
+        String productName;
+        name = name.toLowerCase();
+        for (Product product:products) {
+            productName = product.getName().toLowerCase();
+            if (productName.contains(name)){
+                productResult.add(product);
+            }
+        }
+        return productResult;
+
     }
 
 

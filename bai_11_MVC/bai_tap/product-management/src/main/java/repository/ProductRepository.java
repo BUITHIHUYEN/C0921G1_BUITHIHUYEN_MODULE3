@@ -16,6 +16,6 @@ public interface ProductRepository {
 
     void remove(int id);
 
-    Product searchByName(String name);
+   List<Product>  searchByName(String name);
 
 }

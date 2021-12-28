@@ -16,6 +16,13 @@
 <p>
     <a href="/products?action=create">Create new product</a>
 </p>
+<form >
+    <input type="text" name="search" placeholder="Search By Name">
+    <input type="text" name="action"hidden value="search">
+    <button>Search</button>
+
+</form>
+
 <table border="1">
     <tr>
         <td>Id</td>
