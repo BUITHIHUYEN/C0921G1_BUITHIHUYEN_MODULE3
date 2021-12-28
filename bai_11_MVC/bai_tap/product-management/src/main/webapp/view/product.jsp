@@ -18,7 +18,7 @@
 </p>
 <form >
     <input type="text" name="search" placeholder="Search By Name">
-    <input type="text" name="action"hidden value="search">
+    <input type="text" name="action" hidden value="search">
     <button>Search</button>
 
 </form>

@@ -12,6 +12,9 @@
     <title>Search Product</title>
 </head>
 <body>
+<p>
+    <a href="/products">Back to product list</a>
+</p>
 <table border="1">
     <tr>
         <td>Id</td>

@@ -18,9 +18,12 @@ public class UserDAO implements IUserDAO {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String RESULT_USERS_SQL = "select * from demonew.users where country like ?;";
+    private static final String SORT_USERS_SQL = "select* from users order by `name`;";
 
     public UserDAO() {
     }
+
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -51,6 +54,7 @@ public class UserDAO implements IUserDAO {
             printSQLException(e);
         }
     }
+
     public List<User> selectAllUsers() {
 
         // using try-with-resources to avoid closing resources (boiler plate code)
@@ -77,9 +81,30 @@ public class UserDAO implements IUserDAO {
         }
         return users;
     }
+
     @Override
     public User selectUser(int id) {
-        return null;
+        User user = null;
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                user = new User(id, name, email, country);
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return user;
     }
 
 
@@ -106,6 +131,56 @@ public class UserDAO implements IUserDAO {
         }
         return rowUpdated;
     }
+
+    @Override
+    public List<User> searchByCountry(String country) {
+        // using try-with-resources to avoid closing resources (boiler plate code)
+        List<User> users = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        Connection connection = getConnection();
+        try {
+            // Step 2:Create a statement using connection object
+            PreparedStatement preparedStatement = connection.prepareStatement(RESULT_USERS_SQL);
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            preparedStatement.setString(1, "%" + country + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String countrys = rs.getString("country");
+                users.add(new User(id, name, email, countrys));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> sortByName(String name) {
+        List<User> users = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SORT_USERS_SQL);) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String names = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add(new User(id, names, email, country));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -121,4 +196,5 @@ public class UserDAO implements IUserDAO {
             }
         }
     }
+
 }
