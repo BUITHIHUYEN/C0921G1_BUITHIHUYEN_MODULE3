@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DELL
@@ -25,10 +26,11 @@
     </tr>
     <c:forEach items='${requestScope["products"]}' var="product">
         <tr>
-            <td><a href="/products?action=view&id=${product.getId()}">${product.getName()}</a></td>
-            <td>${product.getPrice()}</td>
-            <td>${product.getProductDescription()}</td>
-            <td>${product.getProducer}</td>
+            <td><a href="/products?action=view&id=${product.id}">${product.id}</a></td>
+            <td> ${product.name}</td>
+            <td>${product.price}</td>
+            <td>${product.productDescription}</td>
+            <td>${product.producer}</td>
             <td><a href="/products?action=edit&id=${product.getId()}">edit</a></td>
             <td><a href="/products?action=delete&id=${product.getId()}">delete</a></td>
         </tr>

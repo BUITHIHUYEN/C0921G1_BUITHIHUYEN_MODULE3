@@ -38,8 +38,7 @@ public class ProductServlet extends HttpServlet {
         Integer price = Integer.parseInt(request.getParameter("price"));
         String productDescription = request.getParameter("productDescription");
         String producer = request.getParameter("producer");
-        int id = (int) (Math.random() * 10000);
-
+        Integer id = Integer.parseInt(request.getParameter("id"));
         Product product = new Product(id, name, price, productDescription, producer);
         this.productService.save(product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");
