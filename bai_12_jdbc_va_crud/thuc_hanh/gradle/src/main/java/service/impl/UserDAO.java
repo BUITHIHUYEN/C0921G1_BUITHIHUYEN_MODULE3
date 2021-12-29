@@ -161,7 +161,7 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public List<User> sortByName(String name) {
+    public List<User> sortByName() {
         List<User> users = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SORT_USERS_SQL);) {

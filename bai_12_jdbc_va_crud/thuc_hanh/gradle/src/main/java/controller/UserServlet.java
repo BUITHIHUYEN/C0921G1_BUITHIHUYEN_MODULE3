@@ -146,7 +146,7 @@ public class UserServlet extends HttpServlet {
 
     private void sortByName(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        List<User> sortByName = userDAO.sortByName(String name);
+        List<User> sortByName = userDAO.sortByName();
         request.setAttribute("listUser", sortByName);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);

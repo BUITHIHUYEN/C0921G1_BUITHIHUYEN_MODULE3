@@ -17,6 +17,9 @@
     <h2>
         <a href="/users?action=create">Add New User</a>
     </h2>
+    <h2>
+        <a href="/users?action=sort">Sort By Name</a>
+    </h2>
     <p>
         <a href="/users">Back to user list</a>
     </p>
@@ -46,7 +49,6 @@
                 <td>
                     <a href="/users?action=edit&id=${user.id}">Edit</a>
                     <a href="/users?action=delete&id=${user.id}">Delete</a>
-                    <a href="/users?action=search&name=${user.name}">Search</a>
                 </td>
             </tr>
         </c:forEach>
